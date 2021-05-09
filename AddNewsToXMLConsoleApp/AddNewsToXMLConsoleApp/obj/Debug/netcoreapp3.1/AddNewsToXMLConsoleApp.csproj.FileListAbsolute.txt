@@ -1,0 +1,13 @@
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\bin\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.exe
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\bin\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.deps.json
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\bin\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.runtimeconfig.json
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\bin\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.runtimeconfig.dev.json
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\bin\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.dll
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\bin\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.pdb
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\obj\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.csprojAssemblyReference.cache
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\obj\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.AssemblyInfoInputs.cache
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\obj\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.AssemblyInfo.cs
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\obj\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.csproj.CoreCompileInputs.cache
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\obj\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.dll
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\obj\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.pdb
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\AddNewsToXMLConsoleApp\AddNewsToXMLConsoleApp\obj\Debug\netcoreapp3.1\AddNewsToXMLConsoleApp.genruntimeconfig.cache
