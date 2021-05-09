@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\vevit\\OneDrive\\Study\\Practics\\Coursework\\DesignPattern\\MerloNews\\MerloNews_ConsoleProject\\MerloNews_ConsoleProject.csproj",
-      "projectName": "MerloNews_ConsoleProject",
-      "projectPath": "F:\\vevit\\OneDrive\\Study\\Practics\\Coursework\\DesignPattern\\MerloNews\\MerloNews_ConsoleProject\\MerloNews_ConsoleProject.csproj",
+      "projectUniqueName": "F:\\vevit\\OneDrive\\Study\\Practics\\Coursework\\DesignPattern\\MerloNews\\MerloNewsConsoleProject\\MerloNewsConsoleProject\\MerloNewsConsoleProject.csproj",
+      "projectName": "MerloNewsConsoleProject",
+      "projectPath": "F:\\vevit\\OneDrive\\Study\\Practics\\Coursework\\DesignPattern\\MerloNews\\MerloNewsConsoleProject\\MerloNewsConsoleProject\\MerloNewsConsoleProject.csproj",
       "packagesPath": "C:\\Users\\vevit\\.nuget\\packages\\",
-      "outputPath": "F:\\vevit\\OneDrive\\Study\\Practics\\Coursework\\DesignPattern\\MerloNews\\MerloNews_ConsoleProject\\obj\\",
+      "outputPath": "F:\\vevit\\OneDrive\\Study\\Practics\\Coursework\\DesignPattern\\MerloNews\\MerloNewsConsoleProject\\MerloNewsConsoleProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "F:\\Program Files\\Microsoft Visual Studio\\Shared\\NuGetPackages",

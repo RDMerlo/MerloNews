@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("MerloNews_ConsoleProject")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("MerloNewsConsoleProject")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("MerloNews_ConsoleProject")]
-[assembly: System.Reflection.AssemblyTitleAttribute("MerloNews_ConsoleProject")]
+[assembly: System.Reflection.AssemblyProductAttribute("MerloNewsConsoleProject")]
+[assembly: System.Reflection.AssemblyTitleAttribute("MerloNewsConsoleProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.

@@ -1,0 +1,13 @@
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\bin\Debug\netcoreapp3.1\MerloNewsConsoleProject.exe
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\bin\Debug\netcoreapp3.1\MerloNewsConsoleProject.deps.json
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\bin\Debug\netcoreapp3.1\MerloNewsConsoleProject.runtimeconfig.json
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\bin\Debug\netcoreapp3.1\MerloNewsConsoleProject.runtimeconfig.dev.json
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\bin\Debug\netcoreapp3.1\MerloNewsConsoleProject.dll
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\bin\Debug\netcoreapp3.1\MerloNewsConsoleProject.pdb
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\obj\Debug\netcoreapp3.1\MerloNewsConsoleProject.csprojAssemblyReference.cache
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\obj\Debug\netcoreapp3.1\MerloNewsConsoleProject.AssemblyInfoInputs.cache
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\obj\Debug\netcoreapp3.1\MerloNewsConsoleProject.AssemblyInfo.cs
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\obj\Debug\netcoreapp3.1\MerloNewsConsoleProject.csproj.CoreCompileInputs.cache
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\obj\Debug\netcoreapp3.1\MerloNewsConsoleProject.dll
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\obj\Debug\netcoreapp3.1\MerloNewsConsoleProject.pdb
+F:\vevit\OneDrive\Study\Practics\Coursework\DesignPattern\MerloNews\MerloNewsConsoleProject\MerloNewsConsoleProject\obj\Debug\netcoreapp3.1\MerloNewsConsoleProject.genruntimeconfig.cache

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MerloNews_ConsoleProject
+namespace MerloNewsConsoleProject
 {
     class Program
     {
