@@ -1,26 +1,95 @@
 ﻿using System;
+using System.IO;
 using System.Xml;
 
 namespace AddNewsToXMLConsoleApp
 {
     class Program
     {
+        static bool CreateDirectory(ref string folderPath)
+        {
+            try
+            {
+                //получаем путь к Документам
+                folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                folderPath += "\\MerloNews";
+                //если папки нет, то пытаемся создать
+                if (!Directory.Exists(folderPath))
+                    Directory.CreateDirectory(folderPath);
+                return true;
+            }
+            catch
+            {
+                Console.WriteLine("Не удалось создать папку");
+                return false;
+            }      
+        }
+
+        static bool CreateXMLDoc(ref XmlDocument doc, string filePath)
+        {
+            try
+            {
+                /*<?xml version="1.0" encoding="utf-8" ?> */
+                //создание объявления (декларации) документа
+                //добавляем в документ
+                XmlDeclaration dec = doc.CreateXmlDeclaration("1.0", "utf-8", null);
+                doc.AppendChild(dec);
+
+                XmlElement xRoot = doc.CreateElement("news");
+                //добавляем в документ
+                doc.AppendChild(xRoot);
+                doc.Save(filePath);
+                return true;
+            }
+            catch
+            {
+                Console.WriteLine("Не удалось создать файл");
+                return false;
+            }
+        }
+
         static void Main(string[] args)
         {
-            string filepatch;
-            //filepatch = Console.ReadLine();
-            filepatch = "F://vevit//OneDrive//Study//Practics//Coursework//DesignPattern//MerloNews//NewsFiles//NewsFile.xml";
+            XmlDocument Doc = new XmlDocument();
+            
+            string folderPath = "";
+            string filePath = "NewsFile.xml";
 
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(filepatch);
+            //Создание папки, если её нет
+            if (!CreateDirectory(ref folderPath))
+                return;
 
-            Console.WriteLine("Количество узлов: {0}", xDoc.SelectNodes("news/article").Count);
+            //Если файла нет, то пытаемся создать
+            if (!System.IO.File.Exists(folderPath + "\\" + filePath))
+                if (!CreateXMLDoc(ref Doc, folderPath + "\\" + filePath))
+                    return;
 
-
+            Doc.Load(folderPath + "\\" + filePath);
+            //Console.WriteLine("Количество узлов: {0}", Doc.SelectNodes("news/article").Count);
             // получим корневой элемент
-            XmlElement xRoot = xDoc.DocumentElement;
+            XmlElement xRoot = Doc.DocumentElement;
             // обход всех узлов в корневом элементе
+            string textMessage;
 
+            do
+            {
+                Console.Write("Введите сообщение: ");
+                textMessage = Console.ReadLine();
+
+                if (textMessage != "")
+                {
+                    XmlElement companyElem = Doc.CreateElement("article");
+                    XmlText companyText = Doc.CreateTextNode(textMessage);
+
+                    companyElem.AppendChild(companyText);
+                    xRoot.AppendChild(companyElem);
+                    Doc.Save(folderPath + "\\" + filePath);
+                }
+                else
+                    break;
+            }
+            while (true);
+ 
             //foreach (XmlNode xnode in xRoot)
             //{
             //    // если узел - article
@@ -29,14 +98,6 @@ namespace AddNewsToXMLConsoleApp
             //        Console.WriteLine($"Сообщение: {xnode.InnerText}");
             //    }
             //}
-
-            XmlElement root = xDoc.DocumentElement;
-            XmlNodeList elemList = root.GetElementsByTagName("article");
-
-            for (int i = 0; i < xDoc.SelectNodes("news/article").Count; i++)
-            {
-                Console.WriteLine(elemList[i].InnerText);
-            }
         }
     }
 }

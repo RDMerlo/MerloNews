@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "MerloNewsConsoleProject_Interface/1.0.0": {
+        "runtime": {
+          "MerloNewsConsoleProject_Interface.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MerloNewsConsoleProject_Interface/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
