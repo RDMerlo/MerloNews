@@ -1,5 +1,6 @@
 ﻿using MerloNewsConsoleProject_Event.NewsClasses;
 using System;
+using System.IO;
 
 namespace MerloNewsConsoleProject_Events
 {
@@ -7,7 +8,26 @@ namespace MerloNewsConsoleProject_Events
     {
         static void Main(string[] args)
         {
-            string path = "F://vevit//OneDrive//Study//Practics//Coursework//DesignPattern//MerloNews//NewsFiles//NewsFile.xml";
+            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            folderPath += "\\MerloNews";
+
+            //если папки нет, то выход
+            if (!Directory.Exists(folderPath))
+            {
+                Console.WriteLine("Ошибка. Не удалось найти папку.");
+                Console.ReadKey();
+                return;
+            }
+
+            string path = folderPath + "\\NewsFile.xml";
+
+            //Если файла нет, то выход
+            if (!System.IO.File.Exists(path))
+            {
+                Console.WriteLine("Ошибка. Не удалось найти файл.");
+                Console.ReadKey();
+                return;
+            }
 
             var eventObserver = new NewsStatusEvent(path);
 

@@ -20,7 +20,8 @@ namespace AddNewsToXMLConsoleApp
             }
             catch
             {
-                Console.WriteLine("Не удалось создать папку");
+                Console.WriteLine("Не удалось создать папку.");
+                Console.ReadKey();
                 return false;
             }      
         }
@@ -43,7 +44,8 @@ namespace AddNewsToXMLConsoleApp
             }
             catch
             {
-                Console.WriteLine("Не удалось создать файл");
+                Console.WriteLine("Не удалось создать файл.");
+                Console.ReadKey();
                 return false;
             }
         }
@@ -53,24 +55,27 @@ namespace AddNewsToXMLConsoleApp
             XmlDocument Doc = new XmlDocument();
             
             string folderPath = "";
-            string filePath = "NewsFile.xml";
+            string filePath;
 
             //Создание папки, если её нет
             if (!CreateDirectory(ref folderPath))
                 return;
 
+            filePath = folderPath + "\\" + "NewsFile.xml";
+
             //Если файла нет, то пытаемся создать
-            if (!System.IO.File.Exists(folderPath + "\\" + filePath))
-                if (!CreateXMLDoc(ref Doc, folderPath + "\\" + filePath))
+            if (!System.IO.File.Exists(filePath))
+                if (!CreateXMLDoc(ref Doc, filePath))
                     return;
 
-            Doc.Load(folderPath + "\\" + filePath);
+            Doc.Load(filePath);
             //Console.WriteLine("Количество узлов: {0}", Doc.SelectNodes("news/article").Count);
             // получим корневой элемент
             XmlElement xRoot = Doc.DocumentElement;
             // обход всех узлов в корневом элементе
             string textMessage;
 
+            Console.WriteLine("Нажмите enter, чтобы выйти.");
             do
             {
                 Console.Write("Введите сообщение: ");
@@ -83,7 +88,7 @@ namespace AddNewsToXMLConsoleApp
 
                     companyElem.AppendChild(companyText);
                     xRoot.AppendChild(companyElem);
-                    Doc.Save(folderPath + "\\" + filePath);
+                    Doc.Save(filePath);
                 }
                 else
                     break;
