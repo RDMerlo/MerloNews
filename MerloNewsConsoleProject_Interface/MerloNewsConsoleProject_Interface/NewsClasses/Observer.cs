@@ -17,7 +17,7 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
 
         public virtual void Unsubscriber()
         {
-            _unsubscriber.Dispose(); //отписка
+            _unsubscriber.Dispose(); //отписка, освобождаем память переменной
         }
 
         public void OnCompleted()

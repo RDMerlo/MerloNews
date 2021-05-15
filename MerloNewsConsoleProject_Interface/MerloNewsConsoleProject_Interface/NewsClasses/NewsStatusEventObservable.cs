@@ -7,10 +7,7 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
 {
     public class NewsStatusEventObservable: IObservable<string>, IDisposable
     {
-        /// <summary>
-        /// Наши события
-        /// </summary>
-        private readonly List<IObserver<string>> _observers;
+        private readonly List<IObserver<string>> _observers; //подписчики
 
         private readonly Timer _timer;
 
@@ -18,11 +15,12 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
 
         private void CheckNewNews(Object sourse, ElapsedEventArgs e)
         {
-            foreach (var news in _merloPublisher.NewNews()) //DeletedFiles
+            //получаем список новых новостей
+            foreach (var news in _merloPublisher.NewNews())
             {
                 foreach (var observer in _observers)
                 {
-                    observer.OnNext(news);
+                    observer.OnNext(news); //отправляем подписчикам новость
                 }
             }
         }
@@ -32,7 +30,7 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
             _observers = new List<IObserver<string>>();
             _merloPublisher = new MerloPublisher(filename);
 
-            //StartMonitoring
+            //запуск таймера для мониторинга за новыми новостями
             if (_merloPublisher.OpenNewsDocument())
             {
                 _timer = new Timer(1000);
@@ -50,14 +48,13 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
         {
             _timer.Dispose();
         }
-
+        //добавление нового подписчика
         public IDisposable Subscribe(IObserver<string> observer)
         {
+            //если такого подписчика нет, то добавляем его
             if (!_observers.Contains(observer))
-            {
                 _observers.Add(observer);
-            }
-            return new Unsubscriber(_observers, observer);
+            return new Unsubscriber(_observers, observer); //возвращаем объект типа IDisposable от класса Unsubscriber
         }
     }
 }

@@ -6,8 +6,8 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
 {
     public class Unsubscriber : IDisposable
     {
-        private readonly List<IObserver<string>> _observers;
-        private readonly IObserver<string> _observer;
+        private readonly List<IObserver<string>> _observers; //список наблюдателей
+        private readonly IObserver<string> _observer; //наблюдатель
 
         public Unsubscriber(List<IObserver<string>> observers, IObserver<string> observer)
         {
@@ -17,6 +17,7 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
 
         public void Dispose()
         {
+            //если наблюдатель не ноль и он есть в списке наблюдателей, то освобождаем память
             if (_observer != null && _observers.Contains(_observer))
                 _observers.Remove(_observer);
         }

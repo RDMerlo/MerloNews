@@ -7,13 +7,7 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
 {
     public class MerloPublisher
     {
-        /// <summary>
-        /// Список всех новостей
-        /// </summary>
-        public List<string> _news;
-
         private string _filepath;
-
         private XmlDocument xDoc;
         private XmlElement xRoot;
 
@@ -32,19 +26,7 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
                 xDoc.Load(_filepath);
                 // получим корневой элемент
                 xRoot = xDoc.DocumentElement;
-
-                _news = new List<string>();
-
                 ColNews = xRoot.SelectNodes("article").Count;
-                
-                if (ColNews > 0)
-                    foreach (XmlNode xnode in xRoot)
-                    {
-                        // если узел - article
-                        if (xnode.Name == "article")
-                            _news.Add(xnode.InnerText);
-                    }
-
                 return true;
             }
             catch
@@ -71,7 +53,6 @@ namespace MerloNewsConsoleProject_Interface.NewsClasses
 
                 for (int i = ColNews; i < colNews; i++)
                 {
-                    _news.Add(elemList[i].InnerText);
                     result.Add(elemList[i].InnerText);
                 }
 

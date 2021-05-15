@@ -7,43 +7,30 @@ namespace MerloNewsConsoleProject.NewsClasses
 {
     public class MerloPublisher
     {
-        /// <summary>
-        /// Список всех новостей
-        /// </summary>
-        public List<string> _news;
+        /// Путь до документа XML
+        private string _filepath; // Путь до документа XML
 
-        private string _filepath;
+        private XmlDocument xDoc; //Объект для работы с XML документом
+        private XmlElement xRoot; //Объект, для работы с корневым узлом XML документа
 
-        private XmlDocument xDoc;
-        private XmlElement xRoot;
+        private int ColNews; // количество статей до загрузки новых статей
 
-        public int ColNews;
+        /// Конструктор
         public MerloPublisher(string filename)
         {
             _filepath = filename;
             ColNews = 0;
         }
 
+        /// Открытие документа
         public bool OpenNewsDocument()
         {
             try
             {
                 xDoc = new XmlDocument();
-                xDoc.Load(_filepath);
+                xDoc.Load(_filepath); //открытие документа
                 // получим корневой элемент
                 xRoot = xDoc.DocumentElement;
-
-                _news = new List<string>();
-
-                ColNews = xRoot.SelectNodes("article").Count;
-                
-                if (ColNews > 0)
-                    foreach (XmlNode xnode in xRoot)
-                    {
-                        // если узел - article
-                        if (xnode.Name == "article")
-                            _news.Add(xnode.InnerText);
-                    }
 
                 return true;
             }
@@ -54,31 +41,31 @@ namespace MerloNewsConsoleProject.NewsClasses
             }
         }
 
+        /// Загрузить и вернуть новые статьи из документа
         public List<string> NewNews()
         {
             List<string> result = new List<string>();
 
-            xDoc.Load(_filepath);
+            xDoc.Load(_filepath); //открываем документ
             // получим корневой элемент
             xRoot = xDoc.DocumentElement;
 
-            int colNews = xRoot.SelectNodes("article").Count;
-
+            int colNews = xRoot.SelectNodes("article").Count; //получаем количество узлов article в документе
+            //если в документе стало больше статей, то загружаем новые
             if (colNews > ColNews)
             {
-                XmlElement root = xDoc.DocumentElement;
-                XmlNodeList elemList = root.GetElementsByTagName("article");
+                //вернуть список всех узлов article
+                XmlNodeList elemList = xRoot.GetElementsByTagName("article");
 
                 for (int i = ColNews; i < colNews; i++)
                 {
-                    _news.Add(elemList[i].InnerText);
+                    //загружаем новые статьи
                     result.Add(elemList[i].InnerText);
                 }
 
-                ColNews = colNews;
+                ColNews = colNews; //изменяем количество статей после загрузки данных
             }
-
-            return result; //возвращаем новые новости
+            return result; //возвращаем новые статьи
         }
     }
 }

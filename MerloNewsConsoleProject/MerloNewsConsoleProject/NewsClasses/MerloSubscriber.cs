@@ -4,18 +4,10 @@ using System.Text;
 
 namespace MerloNewsConsoleProject.NewsClasses
 {
-    /// <summary>
-    /// Класс подписчика
-    /// </summary>
     public class MerloSubscriber
     {
-        /// <summary>
-        /// Имя подписчика
-        /// </summary>
         private string _name;
-        /// <summary>
         /// Имя
-        /// </summary>
         public string Name 
         {
             get

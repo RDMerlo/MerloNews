@@ -4,18 +4,10 @@ using System.Text;
 
 namespace MerloNewsConsoleProject_Event.NewsClasses
 {
-    /// <summary>
-    /// Класс подписчика
-    /// </summary>
     public class MerloSubscriber
     {
-        /// <summary>
-        /// Имя подписчика
-        /// </summary>
         private string _name;
-        /// <summary>
         /// Имя
-        /// </summary>
         public string Name 
         {
             get
@@ -36,20 +28,10 @@ namespace MerloNewsConsoleProject_Event.NewsClasses
             Name = name;
         }
 
-        public void ItIsSubscriber(string text)
-        {
-            Console.WriteLine($"New news: \n{text}\n");
-        }
-
         public void ItIsSubscriber(object sender, string Message)
         {
-            Console.WriteLine($"New news: \n{Name}: {Message}\n");
-        }
-
-        public void ItIsSecondSubscriber(object sender, string Message)
-        {
             Console.WriteLine("-----");
-            Console.WriteLine($"New news: \n{Name}: {Message}\n");
+            Console.WriteLine($"New news {sender}: \n{Name}: {Message}\n");
             Console.WriteLine("-----");
         }
     }

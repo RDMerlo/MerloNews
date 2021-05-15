@@ -7,10 +7,8 @@ namespace MerloNewsConsoleProject_Event.NewsClasses
 {
     public class NewsStatusEvent: IDisposable
     {
-        /// <summary>
         /// Наши события
-        /// </summary>
-        public EventHandler<string> NewsArticle;
+        public event EventHandler<string> NewsArticle;
 
         private readonly Timer _timer;
 
@@ -18,10 +16,9 @@ namespace MerloNewsConsoleProject_Event.NewsClasses
 
         private void CheckNewNews(Object sourse, ElapsedEventArgs e)
         {
-            foreach (var news in _merloPublisher.NewNews()) //DeletedFiles
+            foreach (var news in _merloPublisher.NewNews()) 
             {
-                var handler = NewsArticle;
-                handler?.Invoke(this, news);
+                NewsArticle?.Invoke(this, news);
             }
         }
 
@@ -29,7 +26,6 @@ namespace MerloNewsConsoleProject_Event.NewsClasses
         {
             _merloPublisher = new MerloPublisher(filename);
 
-            //StartMonitoring
             if (_merloPublisher.OpenNewsDocument())
             {
                 _timer = new Timer(1000);

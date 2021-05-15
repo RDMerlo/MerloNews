@@ -6,9 +6,9 @@ namespace MerloNewsConsoleProject_Interface
 {
     class Program
     {
-        static void Main(string[] args)
+        static bool OpenFile(ref string folderPath, ref string path)
         {
-            string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             folderPath += "\\MerloNews";
 
             //если папки нет, то выход
@@ -16,23 +16,34 @@ namespace MerloNewsConsoleProject_Interface
             {
                 Console.WriteLine("Ошибка. Не удалось найти папку.");
                 Console.ReadKey();
-                return;
+                return false;
             }
 
-            string path = folderPath + "\\NewsFile.xml";
+            path = folderPath + "\\NewsFile.xml";
 
             //Если файла нет, то выход
             if (!System.IO.File.Exists(path))
             {
                 Console.WriteLine("Ошибка. Не удалось найти файл.");
                 Console.ReadKey();
-                return;
+                return false;
             }
 
-            var provider = new NewsStatusEventObservable(path);
-            var observer = new Observer();
+            return true;
+        }
 
-            observer.Subscribe(provider);
+        static void Main(string[] args)
+        {
+            string folderPath = "";
+            string path = "";
+
+            if (!OpenFile(ref folderPath, ref path))
+                return;
+
+            NewsStatusEventObservable provider = new NewsStatusEventObservable(path);
+            Observer observer = new Observer(); //подписчик
+
+            observer.Subscribe(provider); //подписка к провайдеру
 
             Console.ReadKey();
         }

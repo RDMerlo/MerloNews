@@ -7,12 +7,10 @@ namespace MerloNewsConsoleProject.NewsClasses
 {
     public class NewsStatusDelegate: IDisposable
     {
-        /// <summary>
         /// Наш делегат
-        /// </summary>
         private readonly Action<string> _subscriber;
 
-        private readonly Timer _timer;
+        private readonly Timer _timer; //таймер
 
         private readonly MerloPublisher _merloPublisher; //отслеживание новостей
 
@@ -29,9 +27,10 @@ namespace MerloNewsConsoleProject.NewsClasses
             _subscriber = subscriber;
             _merloPublisher = new MerloPublisher(filename);
 
-            //StartMonitoring
+            //если документ открылся
             if (_merloPublisher.OpenNewsDocument())
             {
+                //создаём таймер и передаём метод для проверки новых статей
                 _timer = new Timer(1000);
                 _timer.Elapsed += CheckNewNews;
                 _timer.Start();

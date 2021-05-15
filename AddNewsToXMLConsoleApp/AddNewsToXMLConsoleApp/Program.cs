@@ -78,31 +78,30 @@ namespace AddNewsToXMLConsoleApp
             Console.WriteLine("Нажмите enter, чтобы выйти.");
             do
             {
-                Console.Write("Введите сообщение: ");
-                textMessage = Console.ReadLine();
-
-                if (textMessage != "")
+                try
                 {
-                    XmlElement companyElem = Doc.CreateElement("article");
-                    XmlText companyText = Doc.CreateTextNode(textMessage);
+                    Console.Write("Введите сообщение: ");
+                    textMessage = Console.ReadLine();
 
-                    companyElem.AppendChild(companyText);
-                    xRoot.AppendChild(companyElem);
-                    Doc.Save(filePath);
+                    if (textMessage != "")
+                    {
+                        XmlElement companyElem = Doc.CreateElement("article");
+                        XmlText companyText = Doc.CreateTextNode(textMessage);
+
+                        companyElem.AppendChild(companyText);
+                        xRoot.AppendChild(companyElem);
+                        Doc.Save(filePath);
+                    }
+                    else
+                        break;
                 }
-                else
-                    break;
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Произршла непредвиденная ошибка!\n{ex.Message}\n\nНажмите enter чтобы продолжить.");
+                    Console.ReadKey();
+                }
             }
             while (true);
- 
-            //foreach (XmlNode xnode in xRoot)
-            //{
-            //    // если узел - article
-            //    if (xnode.Name == "article")
-            //    {
-            //        Console.WriteLine($"Сообщение: {xnode.InnerText}");
-            //    }
-            //}
         }
     }
 }
